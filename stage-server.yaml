@@ -1,0 +1,41 @@
+---
+- name: "Staging collector" 
+  hosts: "staging"
+  remote_user: mcabe
+  become: yes
+  become_method: sudo
+  become_user: root
+  gather_facts: yes
+  connection: ssh
+  tasks:
+
+    - name: Copy hosts file
+      copy:
+        src: ./hosts
+        dest: /etc/hosts
+        owner: root
+        group: root
+        mode: 0644 
+      become: true
+
+    - name: Copy hostname file
+      copy:
+        src: ./hostname
+        dest: /etc/hostname
+        owner: root
+        group: root
+        mode: 0644 
+      become: true
+
+    - name: Copy netplan file
+      copy:
+        src: ./00-installer-config.yaml
+        dest: /etc/netplan/00-installer-config.yaml
+        owner: root
+        group: root
+        mode: 0644 
+      become: true
+      
+    - name: Unconditionally shut down the machine with all defaults
+      community.general.shutdown:
+

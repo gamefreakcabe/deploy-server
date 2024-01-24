@@ -1,0 +1,15 @@
+# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    ens18:
+      addresses:
+      - 10.254.252.46/24
+      nameservers:
+        addresses:
+        - 10.254.252.1
+        search:
+        - cabecasa.net
+      routes:
+      - to: default
+        via: 10.254.252.1
+  version: 2
