@@ -9,6 +9,22 @@
   connection: ssh
   tasks:
   
+    # run apt update
+    - name: Running apt update
+      ansible.builtin.apt:
+        update_cache: yes
+        
+     # run apt upgrade
+    - name: Running apt upgrade
+      ansible.builtin.apt:
+        name: "*"
+        state: latest
+    
+    # run apt update distro
+    - name: Running apt dist-upgrade
+      ansible.builtin.apt:
+        upgrade: dist
+        
     - name: Copy hosts file
       copy:
         src: ./hosts
@@ -27,6 +43,11 @@
         mode: 0644 
       become: true
 
+    # run apt autormove
+    - name: Running apt autoremove
+      ansible.builtin.apt:
+        autoremove: yes
+    
     - name: Copy netplan file
       copy:
         src: ./00-installer-config.yaml
