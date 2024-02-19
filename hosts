@@ -1,5 +1,5 @@
 127.0.0.1 localhost
-127.0.1.1 mkdocs-personal
+127.0.1.1 fastapi-test
 
 # The following lines are desirable for IPv6 capable hosts
 ::1     ip6-localhost ip6-loopback
