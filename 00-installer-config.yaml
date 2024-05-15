@@ -3,7 +3,7 @@ network:
   ethernets:
     ens18:
       addresses:
-      - 10.254.252.44/24
+      - 10.254.252.42/24
       nameservers:
         addresses:
         - 10.254.252.1
