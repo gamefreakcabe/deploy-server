@@ -3,13 +3,13 @@ network:
   ethernets:
     ens18:
       addresses:
-      - 10.254.252.41/24
+      - 10.254.251.21/24
       nameservers:
         addresses:
-        - 10.254.252.1
+        - 10.254.251.1
         search:
         - cabecasa.net
       routes:
       - to: default
-        via: 10.254.252.1
+        via: 10.254.251.1
   version: 2
