@@ -1,5 +1,5 @@
 127.0.0.1 localhost
-10.254.252.47 foreman-host-test.cabecasa.net
+10.254.252.45 netbox-test.cabecasa.net
 
 # The following lines are desirable for IPv6 capable hosts
 ::1     ip6-localhost ip6-loopback
